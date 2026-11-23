@@ -12,7 +12,8 @@ def make_diagonal(v: list) -> np.ndarray:
     """
         Passing dtype=arr.dtype ensures that if v has floats like [1.5], the grid holds floats (1.5, 0.0) rather than  truncating them to integers (1, 0).
     """
-    for i in range(n):
-        mat[i,i] = arr[i]
+
+    idx = np.arange(n)
+    mat[idx, idx] = arr
         
     return mat
